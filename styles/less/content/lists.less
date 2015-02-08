@@ -1,0 +1,38 @@
+ul {
+	margin: 0 0 55px 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		display: block;
+		padding: 0;
+		color: #666;
+		font-size: 12px;
+		line-height: 24px;
+		font-weight: @font-light;
+		background: url('../img/image-sprite.png') no-repeat;
+
+		&.list-title {
+			font-size: 16px;
+			font-weight: @font-semibold;
+			background: none;
+			margin-bottom: 16px;
+		}
+		&.telephone {
+			background-position: 0 0;
+			.inlineBlock();
+		}
+		&.email { background-position: 0 -24px; }
+		&.stackoverflow { background-position: 0 -48px; }
+		&.github { background-position: 0 -72px; }
+		&.twitter { background-position: 0 -96px; }
+		&.linkedin { background-position: 0 -121px; }
+
+		a {
+			color: #666;
+			padding-left: 34px;
+			text-decoration: none;
+			.inlineBlock();
+		}
+	}
+}

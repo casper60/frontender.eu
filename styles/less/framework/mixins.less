@@ -1,0 +1,66 @@
+.inlineBlock() {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+.borderBox() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.absolute(@top, @right, @bottom, @left) {
+	position: absolute;
+	top: @top;
+	right: @right;
+	bottom: @bottom;
+	left: @left;
+}
+
+.borderRadius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.noPointerEvents() {
+	-webkit-pointer-events: none;
+	-moz-pointer-events: none;
+	pointer-events: none;
+}
+
+.hamburger() {
+	&:before {
+		content: '';
+		width: 1.6em;
+		.absolute(.2em,auto,.2em,0);
+		background: linear-gradient(
+			to bottom, 
+			black, black 20%, 
+			transparent 20%, transparent 40%, 
+			black 40%, black 60%, 
+			transparent 60%, transparent 80%, 
+			black 80%, black 100%
+		);
+	}
+}
+
+.base64DataUriBackground (@encode, @type: ~"image/svg+xml") {
+	@dataUriPrefix: ~"url(data:@{type};base64,";
+	@dataUriSuffix: ~")";
+	@b64DataUri: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataUriPrefix}','@{encode}','@{dataUriSuffix}')`;
+	background: @b64DataUri;
+}
+
+.gradient (@gradient-top, @gradient-bottom) {
+	@svg: ~'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="@{gradient-top}" stop-opacity="1"/><stop offset="100%" stop-color="@{gradient-bottom}" stop-opacity="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#grad-ucgg-generated)" /></svg>';
+	.base64DataUriBackground(@svg);
+	background: -moz-linear-gradient(top, @gradient-top 0%, @gradient-bottom 100%); // FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gradient-top), color-stop(100%,@gradient-bottom)); // Chrome,Safari4+
+	background: -webkit-linear-gradient(top, @gradient-top 0%,@gradient-bottom 100%); // Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top, @gradient-top 0%,@gradient-bottom 100%); // Opera 11.10+
+	background: -ms-linear-gradient(top, @gradient-top 0%,@gradient-bottom 100%); // IE10+
+	background: linear-gradient(to bottom, @gradient-top 0%,@gradient-bottom 100%); // W3C
+	filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr='@{gradient-top}', endColorstr='@{gradient-bottom}',GradientType=0 )"; // IE6-8
+}

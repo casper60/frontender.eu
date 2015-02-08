@@ -1,0 +1,42 @@
+.banner {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	color: #FFF;
+	background: #152242;
+	padding-bottom: 150px;
+	
+	.banner--title {
+		font-size: 28px;
+		font-weight: @font-semibold;
+		margin: 100px auto 40px auto;
+	}
+
+	.banner--body {
+		display: block;
+		font-size: 16px;
+		font-weight: @font-light;
+
+		.disclaimer {
+			display: block;
+			font-size: 12px;
+			margin: 50px 0 80px 0;
+			color: #FFF;
+			text-shadow: 0 1px 0 #000;
+			opacity: .5;
+		}
+	}
+
+	a { text-decoration: none; }
+
+	&.about-banner {
+		background: #341638 url('../img/banner_about_bg.jpg') no-repeat center top;
+		background-size: cover;
+	}
+
+	&.contact-form-banner {
+		background: #555e74 url('../img/banner_contact_bg.jpg') no-repeat center center;
+		background-size: cover;
+	}
+}

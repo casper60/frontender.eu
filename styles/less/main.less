@@ -1,0 +1,146 @@
+@import "framework/mixins.less";
+@import "framework/reset.less";
+@import "framework/grid.less";
+@import "framework/config.less";
+
+// Reset
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+*, *:before, *:after { .borderBox(); }
+
+h1, .h1 {}
+h2, .h2 {
+	font-weight: @font-light;
+	font-size: 26px;
+}
+p, .p {}
+
+
+// Import modules
+@import "inputs/buttons.less";
+@import "toolbar/toolbar.less";
+@import "banner/banner.less";
+@import "content/content.less";
+
+
+// Grid parameters
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+@total-width: 100%;
+
+
+// Grid layout
+.toolbar > * {
+	.column(6);
+}
+
+.banner {
+	.banner--body {
+		.column(8);
+		.push(2);
+	}
+}
+
+.content {
+	.column(12);
+
+	.content--body {
+		.column(8);
+		.push(2);
+	}
+
+	&.contact-form-content {
+		.column(10);
+		.push(1);
+	}
+}
+
+
+// Responsive layout
+@media screen and (max-width: 960px) {
+	.content.contact-form-content {
+		.column(10);
+		.push(1);
+	}
+}
+/*
+@media screen and (max-width: 750px) {
+	.content {
+		.form--inputs {
+			padding: 0;
+			display: block;
+		}
+		.form--sidebar {
+			width: auto;
+			display: block;
+			overflow: hidden;
+			float: none;
+
+			ul {
+				width: 50%;
+				float: left;
+				
+				li {
+					width: 100%;
+				}
+				&.network-list li {
+					width: 50%;
+					float: left;
+
+					a {
+						margin-right: 26px;
+						padding-left: 26px;
+					}
+				}
+				
+				li.list-title { width: 100%; }
+			}
+		}
+	}
+}
+*/
+/*
+@media screen and (max-width: 500px) {
+	.content.contact-form-content {
+		label { width: 100%; }
+		label span { display: inline; }
+
+		.form--input {
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
+*/
+@media screen and (max-width: 460px) {
+	/*
+	.content.contact-form-content {
+		.form--sidebar { display: none; }
+	}
+	*/
+	.content.contact-form-content .form--sidebar ul {
+		width: 100%;
+		float: none;
+	}
+}
+@media screen and (max-width: 375px) {
+	.toolbar {
+		.toolbar--navigation {
+			.absolute(50%,0,auto,auto);
+			width: 40px;
+			height: 26px;
+			padding-left: 1.25em;
+			margin-top: -13px;
+			.hamburger();
+
+			a { display: none; }
+		}
+		.toolbar--logo { font-size: 22px; }
+		.toolbar--logo:before { font-size: 28px; }
+	}
+}

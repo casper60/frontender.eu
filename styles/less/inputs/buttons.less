@@ -1,0 +1,26 @@
+.button {
+	outline: none;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 12px 15px;
+	text-align: center;
+	font-weight: @font-light;
+	.borderRadius(5px);
+
+	&.ghost-button {
+		background: transparent;
+		color: #FFF;
+		border: 2px solid #FFF;
+		clear: left;
+		display: block;
+		margin: 0 auto;
+	}
+
+	&.submit-button {
+		width: 145px;
+		color: #FFF;
+		float: right;
+		background: #000;
+		border: 2px solid #000;
+	}
+}

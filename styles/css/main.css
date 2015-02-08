@@ -316,28 +316,6 @@ h2,
 }
 .content {
   padding: 80px 0 100px 0;
-  /*
-	.form--inputs {
-		display: block;
-		overflow: hidden;
-		padding-right: 50px;
-
-		.form--input {
-			display: block;
-			padding-left: 100px;
-			margin-bottom: 15px;
-		}
-		
-		@import "inputs.less";
-	}
-	
-	.form--sidebar {
-		width: 160px;
-		float: right;
-
-		@import "lists.less";
-	}
-	*/
 }
 .content .content--title {
   text-align: center;
@@ -361,26 +339,6 @@ h2,
 .content .form--sidebar ul {
   width: 50%;
   float: left;
-}
-.content .form--sidebar ul p {
-  margin: 0 26px 0 0;
-  padding: 0 0 0 34px;
-}
-.content .form--sidebar ul li {
-  width: 100%;
-}
-.content .form--sidebar ul.network-list li {
-  width: 50%;
-  float: left;
-}
-.content .form--sidebar ul.network-list li a {
-  margin-right: 26px;
-  padding-left: 26px;
-}
-.content .form--sidebar ul li.list-title {
-  width: 100%;
-}
-.content .form--sidebar ul {
   margin: 0 0 55px 0;
   padding: 0;
   list-style: none;
@@ -397,10 +355,11 @@ h2,
 .content .form--sidebar ul li.list-title {
   font-size: 16px;
   font-weight: 400;
-  background: none;
   margin-bottom: 16px;
+  background: none;
 }
 .content .form--sidebar ul li.telephone {
+  width: 100%;
   background-position: 0 0;
   display: inline-block;
   zoom: 1;
@@ -421,6 +380,17 @@ h2,
 .content .form--sidebar ul li.linkedin {
   background-position: 0 -121px;
 }
+.content .form--sidebar ul li.stackoverflow,
+.content .form--sidebar ul li.github,
+.content .form--sidebar ul li.twitter,
+.content .form--sidebar ul li.linkedin {
+  float: left;
+  width: 50%;
+}
+.content .form--sidebar ul li p {
+  margin: 0 26px 0 0;
+  padding: 0 0 0 34px;
+}
 .content .form--sidebar ul li a {
   color: #666;
   padding-left: 34px;
@@ -428,6 +398,10 @@ h2,
   display: inline-block;
   zoom: 1;
   *display: inline;
+}
+.content .form--sidebar ul.network-list li a {
+  margin-right: 26px;
+  padding-left: 26px;
 }
 .toolbar > * {
   display: inline;
@@ -471,61 +445,7 @@ h2,
     margin-left: 9.375%;
   }
 }
-/*
-@media screen and (max-width: 750px) {
-	.content {
-		.form--inputs {
-			padding: 0;
-			display: block;
-		}
-		.form--sidebar {
-			width: auto;
-			display: block;
-			overflow: hidden;
-			float: none;
-
-			ul {
-				width: 50%;
-				float: left;
-				
-				li {
-					width: 100%;
-				}
-				&.network-list li {
-					width: 50%;
-					float: left;
-
-					a {
-						margin-right: 26px;
-						padding-left: 26px;
-					}
-				}
-				
-				li.list-title { width: 100%; }
-			}
-		}
-	}
-}
-*/
-/*
-@media screen and (max-width: 500px) {
-	.content.contact-form-content {
-		label { width: 100%; }
-		label span { display: inline; }
-
-		.form--input {
-			width: 100%;
-			padding: 0;
-		}
-	}
-}
-*/
 @media screen and (max-width: 460px) {
-  /*
-	.content.contact-form-content {
-		.form--sidebar { display: none; }
-	}
-	*/
   .content.contact-form-content .form--sidebar ul {
     width: 100%;
     float: none;

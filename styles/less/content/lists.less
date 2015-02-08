@@ -1,4 +1,6 @@
 ul {
+	width: 50%;
+	float: left;
 	margin: 0 0 55px 0;
 	padding: 0;
 	list-style: none;
@@ -15,10 +17,11 @@ ul {
 		&.list-title {
 			font-size: 16px;
 			font-weight: @font-semibold;
-			background: none;
 			margin-bottom: 16px;
+			background: none;
 		}
 		&.telephone {
+			width: 100%;
 			background-position: 0 0;
 			.inlineBlock();
 		}
@@ -27,12 +30,30 @@ ul {
 		&.github { background-position: 0 -72px; }
 		&.twitter { background-position: 0 -96px; }
 		&.linkedin { background-position: 0 -121px; }
+		&.stackoverflow, &.github, &.twitter, &.linkedin {
+			float: left;
+			width: 50%;
+		}
+
+		p {
+			margin: 0 26px 0 0;
+			padding: 0 0 0 34px;
+		}
 
 		a {
 			color: #666;
 			padding-left: 34px;
 			text-decoration: none;
 			.inlineBlock();
+		}
+	}
+
+	&.network-list li {
+		
+
+		a {
+			margin-right: 26px;
+			padding-left: 26px;
 		}
 	}
 }

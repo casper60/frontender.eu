@@ -361,9 +361,11 @@ h2,
 .content .form--sidebar ul li.telephone {
   width: 100%;
   background-position: 0 0;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
+  padding: 0 0 0 34px;
+  margin: 0 26px 0 0;
+}
+.content .form--sidebar ul li.telephone a {
+  padding: 0;
 }
 .content .form--sidebar ul li.email {
   background-position: 0 -24px;
@@ -386,10 +388,6 @@ h2,
 .content .form--sidebar ul li.linkedin {
   float: left;
   width: 50%;
-}
-.content .form--sidebar ul li p {
-  margin: 0 26px 0 0;
-  padding: 0 0 0 34px;
 }
 .content .form--sidebar ul li a {
   color: #666;

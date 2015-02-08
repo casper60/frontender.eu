@@ -23,7 +23,10 @@ ul {
 		&.telephone {
 			width: 100%;
 			background-position: 0 0;
-			.inlineBlock();
+			padding: 0 0 0 34px;
+			margin: 0 26px 0 0;
+
+			a { padding: 0; }
 		}
 		&.email { background-position: 0 -24px; }
 		&.stackoverflow { background-position: 0 -48px; }
@@ -36,8 +39,7 @@ ul {
 		}
 
 		p {
-			margin: 0 26px 0 0;
-			padding: 0 0 0 34px;
+			
 		}
 
 		a {
@@ -48,12 +50,8 @@ ul {
 		}
 	}
 
-	&.network-list li {
-		
-
-		a {
-			margin-right: 26px;
-			padding-left: 26px;
-		}
+	&.network-list li a {
+		margin-right: 26px;
+		padding-left: 26px;
 	}
 }
